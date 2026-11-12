@@ -1,0 +1,747 @@
+{
+  "title": "Kingdom Loop",
+  "version": 1,
+  "ranks": [
+    "Camp",
+    "Village",
+    "Town",
+    "City",
+    "Kingdom"
+  ],
+  "roles": {
+    "defender": {
+      "name": "Defender",
+      "hp": 145,
+      "attack": 13,
+      "defense": 6,
+      "art": "founder"
+    },
+    "melee": {
+      "name": "Vanguard",
+      "hp": 110,
+      "attack": 19,
+      "defense": 3,
+      "art": "vanguard"
+    },
+    "ranger": {
+      "name": "Ranger",
+      "hp": 95,
+      "attack": 20,
+      "defense": 2,
+      "art": "ranger"
+    },
+    "healer": {
+      "name": "Healer",
+      "hp": 100,
+      "attack": 9,
+      "defense": 2,
+      "art": "companion"
+    },
+    "mage": {
+      "name": "Arcanist",
+      "hp": 90,
+      "attack": 24,
+      "defense": 1,
+      "art": "mage"
+    }
+  },
+  "regions": [
+    {
+      "id": "frontier",
+      "name": "Green Frontier",
+      "subtitle": "The first road home",
+      "color": "#4b7450",
+      "terrain": "grass",
+      "enemy": [
+        "thornling",
+        "boar"
+      ],
+      "boss": "briar_warden",
+      "boss_name": "Briar Warden",
+      "days_per_second": 0.15,
+      "travel_days": 2,
+      "unlock": 0,
+      "boss_hp": 260,
+      "attack": 10,
+      "reward": {
+        "wood": 100,
+        "stone": 80,
+        "gold": 60
+      },
+      "objective": "Rescue a resident and defeat the Briar Warden."
+    },
+    {
+      "id": "marsh",
+      "name": "Amber Marsh",
+      "subtitle": "Medicine among the reeds",
+      "color": "#507b73",
+      "terrain": "marsh",
+      "enemy": [
+        "slime",
+        "moth"
+      ],
+      "boss": "marsh_matron",
+      "boss_name": "Reed Matron",
+      "days_per_second": 0.65,
+      "travel_days": 14,
+      "unlock": 1,
+      "boss_hp": 600,
+      "attack": 19,
+      "reward": {
+        "herbs": 120,
+        "ore": 70,
+        "gold": 120
+      },
+      "objective": "Secure medicinal plants and recruit Sera."
+    },
+    {
+      "id": "highlands",
+      "name": "Ember Highlands",
+      "subtitle": "A road across the years",
+      "color": "#88725b",
+      "terrain": "highland",
+      "enemy": [
+        "golem",
+        "harpy"
+      ],
+      "boss": "iron_hart",
+      "boss_name": "Iron Hart",
+      "days_per_second": 2.5,
+      "travel_days": 180,
+      "unlock": 2,
+      "boss_hp": 1500,
+      "attack": 30,
+      "reward": {
+        "ore": 220,
+        "stone": 200,
+        "gold": 250
+      },
+      "objective": "Secure a pass and establish the first outpost."
+    },
+    {
+      "id": "heartland",
+      "name": "Hollow Crown",
+      "subtitle": "The kingdom's last trial",
+      "color": "#645878",
+      "terrain": "ruin_ground",
+      "enemy": [
+        "wraith",
+        "sentinel"
+      ],
+      "boss": "hollow_king",
+      "boss_name": "Hollow King",
+      "days_per_second": 4,
+      "travel_days": 365,
+      "unlock": 3,
+      "boss_hp": 3600,
+      "attack": 42,
+      "reward": {
+        "gold": 1200,
+        "ore": 400
+      },
+      "objective": "Lead a prepared party and break the Hollow Crown."
+    }
+  ],
+  "enemies": {
+    "thornling": {
+      "name": "Thornling",
+      "hp": 40,
+      "attack": 7
+    },
+    "boar": {
+      "name": "Bristle boar",
+      "hp": 58,
+      "attack": 9
+    },
+    "slime": {
+      "name": "Bog slime",
+      "hp": 90,
+      "attack": 13
+    },
+    "moth": {
+      "name": "Gloom moth",
+      "hp": 75,
+      "attack": 16
+    },
+    "golem": {
+      "name": "Ash golem",
+      "hp": 185,
+      "attack": 21
+    },
+    "harpy": {
+      "name": "Crag harpy",
+      "hp": 125,
+      "attack": 25
+    },
+    "wraith": {
+      "name": "Crown wraith",
+      "hp": 230,
+      "attack": 29
+    },
+    "sentinel": {
+      "name": "Hollow sentinel",
+      "hp": 320,
+      "attack": 31
+    }
+  },
+  "buildings": [
+    {
+      "id": "campfire",
+      "name": "Campfire",
+      "art": "campfire",
+      "cost": {
+        "wood": 0,
+        "stone": 0
+      },
+      "days": 0,
+      "rank": 0,
+      "effect": "gather",
+      "amount": 0,
+      "footprint": [
+        2,
+        2
+      ]
+    },
+    {
+      "id": "shelter",
+      "name": "Shelter",
+      "art": "shelter",
+      "cost": {
+        "wood": 20,
+        "stone": 5
+      },
+      "days": 1,
+      "rank": 0,
+      "effect": "housing",
+      "amount": 3,
+      "footprint": [
+        2,
+        2
+      ]
+    },
+    {
+      "id": "residence",
+      "name": "Family residence",
+      "art": "family_home",
+      "cost": {
+        "wood": 55,
+        "stone": 25
+      },
+      "days": 3,
+      "rank": 0,
+      "effect": "housing",
+      "amount": 8,
+      "footprint": [
+        2,
+        2
+      ]
+    },
+    {
+      "id": "storage",
+      "name": "Storehouse",
+      "art": "storage_chest",
+      "cost": {
+        "wood": 35,
+        "stone": 15
+      },
+      "days": 2,
+      "rank": 0,
+      "effect": "storage",
+      "amount": 1200,
+      "footprint": [
+        2,
+        2
+      ]
+    },
+    {
+      "id": "well",
+      "name": "Well",
+      "art": "village_well",
+      "cost": {
+        "wood": 20,
+        "stone": 35
+      },
+      "days": 2,
+      "rank": 0,
+      "effect": "water",
+      "amount": 1,
+      "footprint": [
+        2,
+        2
+      ]
+    },
+    {
+      "id": "garden",
+      "name": "Garden",
+      "art": "crop_plot",
+      "cost": {
+        "wood": 18,
+        "stone": 5
+      },
+      "days": 1,
+      "rank": 0,
+      "effect": "food",
+      "amount": 5,
+      "footprint": [
+        2,
+        2
+      ]
+    },
+    {
+      "id": "field",
+      "name": "Wheat field",
+      "art": "field",
+      "cost": {
+        "wood": 35,
+        "stone": 15
+      },
+      "days": 3,
+      "rank": 1,
+      "effect": "food",
+      "amount": 9,
+      "footprint": [
+        2,
+        2
+      ]
+    },
+    {
+      "id": "pen",
+      "name": "Animal pen",
+      "art": "pen",
+      "cost": {
+        "wood": 45,
+        "stone": 15
+      },
+      "days": 4,
+      "rank": 1,
+      "effect": "food",
+      "amount": 7,
+      "footprint": [
+        3,
+        2
+      ]
+    },
+    {
+      "id": "kitchen",
+      "name": "Kitchen",
+      "art": "kitchen",
+      "cost": {
+        "wood": 55,
+        "stone": 35
+      },
+      "days": 4,
+      "rank": 1,
+      "effect": "meals",
+      "amount": 3,
+      "footprint": [
+        2,
+        2
+      ]
+    },
+    {
+      "id": "herbalist",
+      "name": "Herbalist",
+      "art": "herbalist",
+      "cost": {
+        "wood": 45,
+        "stone": 25
+      },
+      "days": 4,
+      "rank": 1,
+      "effect": "medicine",
+      "amount": 2,
+      "footprint": [
+        2,
+        2
+      ]
+    },
+    {
+      "id": "smithy",
+      "name": "Smithy",
+      "art": "smithy",
+      "cost": {
+        "wood": 60,
+        "stone": 55
+      },
+      "days": 5,
+      "rank": 2,
+      "effect": "equipment",
+      "amount": 1,
+      "footprint": [
+        2,
+        2
+      ]
+    },
+    {
+      "id": "tailor",
+      "name": "Tailor",
+      "art": "tailor",
+      "cost": {
+        "wood": 50,
+        "stone": 25
+      },
+      "days": 4,
+      "rank": 2,
+      "effect": "cloth",
+      "amount": 3,
+      "footprint": [
+        2,
+        2
+      ]
+    },
+    {
+      "id": "training",
+      "name": "Training ground",
+      "art": "training",
+      "cost": {
+        "wood": 70,
+        "stone": 45
+      },
+      "days": 5,
+      "rank": 2,
+      "effect": "training",
+      "amount": 1,
+      "footprint": [
+        3,
+        2
+      ]
+    },
+    {
+      "id": "school",
+      "name": "School",
+      "art": "school",
+      "cost": {
+        "wood": 65,
+        "stone": 45
+      },
+      "days": 5,
+      "rank": 2,
+      "effect": "education",
+      "amount": 1,
+      "footprint": [
+        2,
+        2
+      ]
+    },
+    {
+      "id": "infirmary",
+      "name": "Infirmary",
+      "art": "infirmary",
+      "cost": {
+        "wood": 60,
+        "stone": 50
+      },
+      "days": 5,
+      "rank": 2,
+      "effect": "recovery",
+      "amount": 2,
+      "footprint": [
+        2,
+        2
+      ]
+    },
+    {
+      "id": "lodge",
+      "name": "Expedition lodge",
+      "art": "lodge",
+      "cost": {
+        "wood": 80,
+        "stone": 50
+      },
+      "days": 6,
+      "rank": 1,
+      "effect": "missions",
+      "amount": 1,
+      "footprint": [
+        3,
+        2
+      ]
+    },
+    {
+      "id": "tower",
+      "name": "Watchtower",
+      "art": "tower",
+      "cost": {
+        "wood": 50,
+        "stone": 60
+      },
+      "days": 4,
+      "rank": 2,
+      "effect": "defense",
+      "amount": 15,
+      "footprint": [
+        2,
+        2
+      ]
+    },
+    {
+      "id": "wall",
+      "name": "Defensive wall",
+      "art": "wall",
+      "cost": {
+        "wood": 12,
+        "stone": 18
+      },
+      "days": 1,
+      "rank": 1,
+      "effect": "defense",
+      "amount": 5,
+      "footprint": [
+        1,
+        1
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "bramble_den",
+      "name": "Bramble den",
+      "art": "thornling",
+      "effect": "den",
+      "text": "Creates an encounter. More danger, more loot."
+    },
+    {
+      "id": "grove",
+      "name": "Living grove",
+      "art": "oak_tree",
+      "effect": "wood",
+      "text": "Gather timber each time the party passes."
+    },
+    {
+      "id": "outcrop",
+      "name": "Mineral outcrop",
+      "art": "rock",
+      "effect": "stone",
+      "text": "Gather stone and ore each circuit."
+    },
+    {
+      "id": "shelter",
+      "name": "Wayside shelter",
+      "art": "shelter",
+      "effect": "heal",
+      "text": "Recover 20% health on this tile."
+    },
+    {
+      "id": "watch",
+      "name": "Watch post",
+      "art": "tower",
+      "effect": "guard",
+      "text": "Reduce nearby encounter damage by 20%."
+    },
+    {
+      "id": "garden",
+      "name": "Wild garden",
+      "art": "crop_plot",
+      "effect": "food",
+      "text": "Gather food. Beside a grove: a fertile grove."
+    },
+    {
+      "id": "spring",
+      "name": "Clear spring",
+      "art": "village_well",
+      "effect": "spring",
+      "text": "Recover health. Beside a garden: extra food."
+    },
+    {
+      "id": "herbs",
+      "name": "Medicinal bank",
+      "art": "herbalist",
+      "effect": "herbs",
+      "text": "Gather herbs. Beside a spring: restorative bank."
+    },
+    {
+      "id": "ruins",
+      "name": "Old ruins",
+      "art": "ruin",
+      "effect": "treasure",
+      "text": "An elite encounter guards equipment and gold."
+    },
+    {
+      "id": "beacon",
+      "name": "Road beacon",
+      "art": "campfire",
+      "effect": "beacon",
+      "text": "Lower local threat and restore morale."
+    },
+    {
+      "id": "quarry",
+      "name": "Deep quarry",
+      "art": "rock",
+      "effect": "ore",
+      "text": "Rich ore, guarded by a stronger foe."
+    },
+    {
+      "id": "reclaim",
+      "name": "Reclamation",
+      "art": "icon_wood",
+      "effect": "remove",
+      "text": "Remove a placed card and recover materials."
+    }
+  ],
+  "items": [
+    {
+      "id": "blade",
+      "name": "Iron blade",
+      "slot": "weapon",
+      "attack": 7,
+      "defense": 0,
+      "hp": 0,
+      "cost": {
+        "ore": 8,
+        "gold": 8
+      }
+    },
+    {
+      "id": "steel_blade",
+      "name": "Tempered blade",
+      "slot": "weapon",
+      "attack": 16,
+      "defense": 0,
+      "hp": 0,
+      "cost": {
+        "ore": 20,
+        "gold": 18
+      }
+    },
+    {
+      "id": "armor",
+      "name": "Guard armor",
+      "slot": "armor",
+      "attack": 0,
+      "defense": 5,
+      "hp": 25,
+      "cost": {
+        "ore": 10,
+        "cloth": 5
+      }
+    },
+    {
+      "id": "royal_armor",
+      "name": "Royal armor",
+      "slot": "armor",
+      "attack": 0,
+      "defense": 10,
+      "hp": 55,
+      "cost": {
+        "ore": 24,
+        "cloth": 12
+      }
+    },
+    {
+      "id": "charm",
+      "name": "Grove charm",
+      "slot": "charm",
+      "attack": 3,
+      "defense": 1,
+      "hp": 15,
+      "cost": {
+        "herbs": 12,
+        "gold": 8
+      }
+    },
+    {
+      "id": "crown_charm",
+      "name": "Dawn talisman",
+      "slot": "charm",
+      "attack": 7,
+      "defense": 3,
+      "hp": 35,
+      "cost": {
+        "herbs": 28,
+        "gold": 25
+      }
+    }
+  ],
+  "recipes": [
+    {
+      "id": "meals",
+      "name": "Prepare meals",
+      "cost": {
+        "food": 12
+      },
+      "reward": {
+        "meals": 6
+      },
+      "building": "kitchen",
+      "days": 3
+    },
+    {
+      "id": "potions",
+      "name": "Brew healing mixtures",
+      "cost": {
+        "herbs": 10
+      },
+      "reward": {
+        "potions": 4
+      },
+      "building": "herbalist",
+      "days": 4
+    },
+    {
+      "id": "cloth",
+      "name": "Weave travel cloth",
+      "cost": {
+        "food": 6
+      },
+      "reward": {
+        "cloth": 8
+      },
+      "building": "tailor",
+      "days": 3
+    }
+  ],
+  "romances": [
+    {
+      "id": "mira",
+      "name": "Mira",
+      "role": "healer",
+      "age": 25,
+      "trait": "Patient herbalist",
+      "rescue_region": 0
+    },
+    {
+      "id": "sera",
+      "name": "Sera",
+      "role": "ranger",
+      "age": 24,
+      "trait": "Restless pathfinder",
+      "rescue_region": 1
+    }
+  ],
+  "missions": [
+    {
+      "id": "gather",
+      "name": "Gathering patrol",
+      "days": 90,
+      "cost": 12,
+      "risk": 0.08,
+      "reward": {
+        "wood": 80,
+        "stone": 45,
+        "food": 60
+      }
+    },
+    {
+      "id": "rescue",
+      "name": "Search for survivors",
+      "days": 180,
+      "cost": 24,
+      "risk": 0.18,
+      "reward": {
+        "gold": 35
+      }
+    },
+    {
+      "id": "scout",
+      "name": "Secure supply road",
+      "days": 240,
+      "cost": 30,
+      "risk": 0.24,
+      "reward": {
+        "ore": 70,
+        "herbs": 55,
+        "gold": 50
+      }
+    }
+  ]
+}
